@@ -1,0 +1,21 @@
+{
+  "name": "gobelins-threejs-course-test",
+  "version": "1.0.0",
+  "description": "Launcher for the Gobelins chatrooms",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.10",
+    "prettier": "^3.9.10",
+    "sass-embedded": "^1.108.1",
+    "vite": "^8.3.7"
+  },
+  "dependencies": {
+    "vue": "^3.5.45"
+  }
+}
