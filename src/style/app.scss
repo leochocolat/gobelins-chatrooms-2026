@@ -1,0 +1,45 @@
+:root {
+    color-scheme: light dark;
+
+    --color-background: #f2f2f7;
+    --color-surface: #ffffff;
+    --color-surface-active: #e5e5ea;
+    --color-text: #000000;
+    --color-text-secondary: #8e8e93;
+
+    @media (prefers-color-scheme: dark) {
+        --color-background: #000000;
+        --color-surface: #1c1c1e;
+        --color-surface-active: #2c2c2e;
+        --color-text: #ffffff;
+        --color-text-secondary: #8e8e93;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    // Feel more like a native app inside the webview
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}

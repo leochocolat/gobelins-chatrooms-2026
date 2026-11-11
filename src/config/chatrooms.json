@@ -1,0 +1,20 @@
+[
+    {
+        "id": "leo",
+        "name": "Chatroom de Léo",
+        "image": "images/room-1.svg",
+        "url": "http://chat-gobelins.leomouraire.com"
+    },
+    {
+        "id": "design",
+        "name": "Design",
+        "image": "images/room-2.svg",
+        "url": "https://example.com/chat/design"
+    },
+    {
+        "id": "dev",
+        "name": "Development",
+        "image": "images/room-3.svg",
+        "url": "https://example.com/chat/dev"
+    }
+]
