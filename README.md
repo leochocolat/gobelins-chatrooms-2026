@@ -41,7 +41,7 @@ Chatrooms are listed in [`src/config/chatrooms.json`](src/config/chatrooms.json)
 }
 ```
 
-- `image` (optional): a PNG or JPG in `public/images/`, referenced with a relative path (no leading `/`). It's shown in a 16:10 frame, so a landscape image at least ~1400px wide looks best. On `pnpm build`, it's converted to an optimized WebP in `dist/` only (see [`plugins/optimize-images.js`](plugins/optimize-images.js)); never commit WebP versions. Without an image, a placeholder photo from Unsplash is used.
+- `image` (optional): a PNG or JPG in `public/images/`, referenced with a relative path (no leading `/`). It's shown in a 16:10 frame, so a landscape image at least ~1400px wide looks best. On `pnpm build`, it's converted to an optimized WebP in `dist/` only (see [`plugins/optimize-images.js`](plugins/optimize-images.js)); never commit WebP versions. Without an image (or if it fails to load), a white placeholder with an app icon grid is shown.
 - `credits` (optional): either `{ "design": [...], "development": [...] }`, displayed as two labelled lines, or a plain string displayed as is.
 
 ## Electron app (macOS / Windows)

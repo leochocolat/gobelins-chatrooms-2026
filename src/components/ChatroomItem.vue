@@ -1,7 +1,21 @@
 <template>
     <a class="chatroom-card" :href="chatroom.url" @click="onClick">
         <span class="chatroom-card__media">
-            <img class="chatroom-card__image" :src="imageSrc" alt="" @error="onImageError" />
+            <img v-if="showImage" class="chatroom-card__image" :src="chatroom.image" alt="" @error="onImageError" />
+            <!-- No image: white tile with an app icon template grid, like iOS's default app icon -->
+            <span v-else class="chatroom-card__image chatroom-card__placeholder" aria-hidden="true">
+                <svg viewBox="0 0 100 100">
+                    <g fill="none" stroke="currentColor" stroke-width="0.6">
+                        <rect x="0.5" y="0.5" width="99" height="99" rx="22" />
+                        <path d="M0.5 0.5l99 99M99.5 0.5l-99 99M50 0.5v99M0.5 50h99" />
+                        <path d="M21 0.5v99M79 0.5v99M0.5 21h99M0.5 79h99" />
+                        <rect x="9" y="21" width="82" height="58" />
+                        <rect x="21" y="9" width="58" height="82" />
+                        <circle cx="50" cy="50" r="40" />
+                        <circle cx="50" cy="50" r="18" />
+                    </g>
+                </svg>
+            </span>
             <span class="chatroom-card__actions" aria-hidden="true">
                 <span class="chatroom-card__pill">Enter</span>
                 <span class="chatroom-card__arrow">
@@ -38,7 +52,6 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import { getFallbackImage } from '@/utils/images.js';
 import { openChatroom } from '@/utils/native.js';
 
 const CREDIT_ROLES = {
@@ -59,10 +72,7 @@ const props = defineProps({
 
 const imageFailed = ref(false);
 
-const imageSrc = computed(() => {
-    if (!props.chatroom.image || imageFailed.value) return getFallbackImage(props.chatroom.id);
-    return props.chatroom.image;
-});
+const showImage = computed(() => Boolean(props.chatroom.image) && !imageFailed.value);
 
 // credits: { design: ['Name', ...], development: ['Name', ...] }
 const creditGroups = computed(() => {
@@ -129,6 +139,19 @@ function onClick(event) {
 
     .chatroom-card:active & {
         transform: scale(1.06);
+    }
+}
+
+.chatroom-card__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    color: #d4d4d8;
+
+    svg {
+        height: 72%;
+        overflow: visible;
     }
 }
 
