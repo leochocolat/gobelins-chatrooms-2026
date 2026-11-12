@@ -18,20 +18,27 @@ Chatrooms are listed in [`src/config/chatrooms.json`](src/config/chatrooms.json)
 {
     "id": "general",
     "name": "General",
-    "image": "images/room-1.svg",
-    "url": "https://example.com/chat/general"
+    "image": "images/general.jpg",
+    "url": "https://example.com/chat/general",
+    "credits": {
+        "design": ["Jane Doe", "John Doe"],
+        "development": ["Alex Smith"]
+    }
 }
 ```
 
-Images go in `public/images/` and are referenced with a relative path (no leading `/`).
+- `image` (optional): goes in `public/images/` and is referenced with a relative path (no leading `/`). It's shown in a landscape 5:4 frame, around 700px wide at most, so a ~1400px wide JPG/WebP is plenty. Without an image, a placeholder photo from Unsplash is used.
+- `credits` (optional): either `{ "design": [...], "development": [...] }`, displayed as two labelled lines, or a plain string displayed as is.
 
 ## Native app integration
 
 When a chatroom is tapped, the page sends a message to the `openChatroom` script message handler with this body:
 
 ```json
-{ "id": "general", "name": "General", "url": "https://example.com/chat/general" }
+{ "id": "general", "name": "General", "url": "https://example.com/chat/general", "remember": false }
 ```
+
+`remember` reflects the "Don't show this next time" switch: the app saves the chatroom and opens it directly on next launch. Closing the chatroom (✕ button) forgets that choice.
 
 If the handler isn't registered (e.g. in a regular browser), the page falls back to navigating to the chatroom `url`.
 
