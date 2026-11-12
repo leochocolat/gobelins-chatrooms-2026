@@ -2,6 +2,8 @@
 
 Hub listing the available chatrooms. It's displayed in the native iOS / macOS app (Xcode project, `WKWebView`) and in the Electron desktop app for macOS / Windows (this repo, `electron/`).
 
+Production: https://gobelins-chartooms-2026.netlify.app/
+
 ## Development
 
 ```sh
