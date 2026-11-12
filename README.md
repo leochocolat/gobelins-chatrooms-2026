@@ -4,6 +4,18 @@ Hub listing the available chatrooms. It's displayed in the native iOS / macOS ap
 
 Production: https://gobelins-chartooms-2026.netlify.app/
 
+## Compatibility
+
+| App | Minimum version |
+| --- | --- |
+| Electron, macOS | macOS 13 Ventura (Apple Silicon and Intel) |
+| Electron, Windows | Windows 10, 64-bit (x64; runs on Windows on ARM through emulation) |
+| Xcode app, iOS / iPadOS | iOS / iPadOS 26.5 |
+| Xcode app, macOS | macOS 26.5 |
+| Web | Recent Safari, Chrome, Edge and Firefox |
+
+The Electron minimums come from Electron 45 itself. The Xcode app's are its deployment targets, and it uses iOS / macOS 26 APIs (Liquid Glass close button), so 26.0 is the lowest it could go.
+
 ## Development
 
 ```sh
