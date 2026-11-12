@@ -39,6 +39,42 @@
         }
     },
     {
+        "id": "check-up",
+        "name": "Check Up",
+        "url": "https://check-up-steel.vercel.app/",
+        "credits": {
+            "design": ["Lelia", "Céline"],
+            "development": ["Martin"]
+        }
+    },
+    {
+        "id": "agora",
+        "name": "Agora",
+        "url": "https://agora-two-topaz.vercel.app/",
+        "credits": {
+            "design": ["Edgar", "Wesson"],
+            "development": ["Enzo"]
+        }
+    },
+    {
+        "id": "conversus",
+        "name": "Conversus",
+        "url": "https://conversus-three.vercel.app/",
+        "credits": {
+            "design": ["Clara"],
+            "development": ["Killian", "Thalia"]
+        }
+    },
+    {
+        "id": "epistellaire",
+        "name": "Epistellaire",
+        "url": "https://chat-server-gobelin.vercel.app/",
+        "credits": {
+            "design": ["Juliette", "Baptiste"],
+            "development": ["Louis"]
+        }
+    },
+    {
         "id": "leo",
         "name": "Chatroom de Léo",
         "image": "images/leo.png",
