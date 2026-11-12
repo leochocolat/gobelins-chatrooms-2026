@@ -22,7 +22,7 @@
         <span class="chatroom-card__name">{{ chatroom.name }}</span>
 
         <span v-if="chatroom.credits" class="chatroom-card__field">
-            <span class="chatroom-card__field-label">Credits</span>
+            <!-- <span class="chatroom-card__field-label">Credits</span> -->
             <span v-if="typeof chatroom.credits === 'string'" class="chatroom-card__field-value">
                 {{ chatroom.credits }}
             </span>

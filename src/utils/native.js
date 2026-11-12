@@ -2,6 +2,10 @@
 const HANDLER_NAME = 'openChatroom';
 
 function getHandler() {
+    // Electron app: bridge exposed by electron/preload-hub.cjs
+    if (window.electron?.openChatroom) return { postMessage: window.electron.openChatroom };
+
+    // Xcode app (iOS / macOS)
     return window.webkit?.messageHandlers?.[HANDLER_NAME];
 }
 

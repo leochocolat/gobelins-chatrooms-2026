@@ -1,0 +1,29 @@
+appId: Gobelins.Gobelins-Chatrooms-2026
+productName: Gobelins Chatrooms 2026
+copyright: Copyright © 2026 Gobelins
+
+directories:
+  output: release
+
+# The hub is prebuilt by Vite into dist/, the Electron code lives in electron/
+files:
+  - dist/**
+  - electron/**
+  - package.json
+
+mac:
+  target:
+    - target: dmg
+      arch: [arm64, x64]
+  category: public.app-category.social-networking
+  # Unsigned for now: macOS shows a Gatekeeper warning on first launch
+  identity: null
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true

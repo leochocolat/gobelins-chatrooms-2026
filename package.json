@@ -1,22 +1,30 @@
 {
-  "name": "gobelins-threejs-course-test",
+  "name": "gobelins-chatrooms-2026",
+  "productName": "Gobelins Chatrooms 2026",
   "version": "1.0.0",
   "description": "Launcher for the Gobelins chatrooms",
+  "author": "Léo Mouraire",
+  "main": "electron/main.mjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "electron:dev": "concurrently -k -n vite,electron \"vite\" \"wait-on tcp:5173 && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "electron:build:mac": "vite build && electron-builder --mac",
+    "electron:build:win": "vite build && electron-builder --win"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.10",
+    "concurrently": "^10.0.7",
+    "cross-env": "^10.1.0",
+    "electron": "^45.3.0",
+    "electron-builder": "^26.18.0",
     "prettier": "^3.9.10",
     "sass-embedded": "^1.108.1",
     "sharp": "^0.35.5",
-    "vite": "^8.3.7"
-  },
-  "dependencies": {
-    "vue": "^3.5.45"
+    "vite": "^8.3.7",
+    "vue": "^3.5.45",
+    "wait-on": "^9.5.1"
   }
 }

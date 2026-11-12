@@ -1,36 +1,51 @@
 [
     {
-        "id": "leo",
-        "name": "Chatroom de Léo",
-        "image": "images/leo.png",
-        "url": "https://chat-gobelins.leomouraire.com",
-        "credits": "Léo"
-    },
-    {
         "id": "message-in-a-bottle",
         "name": "Message in a bottle",
         "image": "images/message-in-a-bottle.png",
         "url": "https://message-in-a-bottle-pi.vercel.app/",
-        "credits": "Simon, ?, ?"
+        "credits": {
+            "design": ["Mathis", "Elina"],
+            "development": ["Simon"]
+        }
     },
     {
         "id": "leici",
         "name": "Leici",
         "url": "https://leici.noahbuisson.fr/",
-        "credits": "Noah, ?, ?"
+        "credits": {
+            "design": ["Matthieu", "Maeva"],
+            "development": ["Noah"]
+        }
     },
     {
         "id": "harmonie",
         "name": "Harmonie",
         "image": "images/harmonie.png",
         "url": "https://gobelins-harmonie.vercel.app/",
-        "credits": "Arthur, ?, ?"
+        "credits": {
+            "design": ["Andrea", "Laia"],
+            "development": ["Arthur"]
+        }
     },
     {
         "id": "papergram",
         "name": "Papergram",
         "image": "images/papergram.png",
         "url": "https://gobelins-2026-nice-talking.vercel.app/",
-        "credits": "Emma, ?, ?"
+        "credits": {
+            "design": ["Ninon", "Amira"],
+            "development": ["Emma"]
+        }
+    },
+    {
+        "id": "leo",
+        "name": "Chatroom de Léo",
+        "image": "images/leo.png",
+        "url": "https://chat-gobelins.leomouraire.com",
+        "credits": {
+            "design": ["Léo"],
+            "development": ["Léo"]
+        }
     }
 ]

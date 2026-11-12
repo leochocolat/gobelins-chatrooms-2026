@@ -1,6 +1,6 @@
 # Gobelins Chatrooms 2026
 
-Hub listing the available chatrooms, meant to be displayed in a `WKWebView` inside the native iOS / macOS app.
+Hub listing the available chatrooms. It's displayed in the native iOS / macOS app (Xcode project, `WKWebView`) and in the Electron desktop app for macOS / Windows (this repo, `electron/`).
 
 ## Development
 
@@ -29,6 +29,25 @@ Chatrooms are listed in [`src/config/chatrooms.json`](src/config/chatrooms.json)
 
 - `image` (optional): a PNG or JPG in `public/images/`, referenced with a relative path (no leading `/`). It's shown in a 16:10 frame, so a landscape image at least ~1400px wide looks best. On `pnpm build`, it's converted to an optimized WebP in `dist/` only (see [`plugins/optimize-images.js`](plugins/optimize-images.js)); never commit WebP versions. Without an image, a placeholder photo from Unsplash is used.
 - `credits` (optional): either `{ "design": [...], "development": [...] }`, displayed as two labelled lines, or a plain string displayed as is.
+
+## Electron app (macOS / Windows)
+
+```sh
+pnpm electron:dev         # hub dev server + Electron window
+pnpm electron:build:mac   # release/*.dmg (Apple Silicon + Intel)
+pnpm electron:build:win   # release/*Setup*.exe (Windows x64)
+```
+
+The packaged app bundles the built hub (`dist/`). Chatrooms open over the hub with a loading screen, an error screen with **Try again**, a close button (or Escape) to go back, and "Don't show this next time" reopens the chosen chatroom at launch (saved in the app's user data folder).
+
+- `electron/main.mjs`: window, chatroom views, remembered chatroom
+- `electron/overlay.html`: loading / error screen and close button shown over a chatroom
+- `electron/preload-hub.cjs`: `window.electron.openChatroom()`, used by `src/utils/native.js`
+- `electron-builder.yml`: packaging config
+
+The builds are **not signed** yet: on macOS, open the app the first time with right-click > Open; on Windows, SmartScreen asks to confirm ("More info" > "Run anyway").
+
+Building the Windows installer on an Apple Silicon Mac needs Rosetta 2 (`softwareupdate --install-rosetta`), as electron-builder's NSIS tool is Intel only. The unpacked Windows app (`release/win-unpacked/`) is produced either way.
 
 ## Native app integration
 
