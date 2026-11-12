@@ -20,10 +20,17 @@
         "credits": "Noah, ?, ?"
     },
     {
-        "id": "Harmonie",
-        "name": "harmonie",
+        "id": "harmonie",
+        "name": "Harmonie",
         "image": "images/harmonie.png",
         "url": "https://gobelins-harmonie.vercel.app/",
         "credits": "Arthur, ?, ?"
+    },
+    {
+        "id": "papergram",
+        "name": "Papergram",
+        "image": "images/papergram.png",
+        "url": "https://gobelins-2026-nice-talking.vercel.app/",
+        "credits": "Emma, ?, ?"
     }
 ]
