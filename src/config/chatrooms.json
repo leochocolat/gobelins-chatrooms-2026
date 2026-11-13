@@ -75,13 +75,13 @@
         }
     },
     {
-        "id": "leo",
-        "name": "Chatroom de Léo",
-        "image": "images/leo.png",
-        "url": "https://chat-gobelins.leomouraire.com",
+        "id": "Bipbip",
+        "name": "Bipbip",
+        "url": "https://bipbip-chat.vercel.app/",
+        "image": "/images/bipbip.svg",
         "credits": {
-            "design": ["Léo"],
-            "development": ["Léo"]
+            "design": ["Juliette", "Baptiste"],
+            "development": ["Adrien"]
         }
     }
 ]
