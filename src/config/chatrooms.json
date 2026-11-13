@@ -80,7 +80,7 @@
         "url": "https://bipbip-chat.vercel.app/",
         "image": "/images/bipbip.svg",
         "credits": {
-            "design": ["Juliette", "Baptiste"],
+            "design": ["", ""],
             "development": ["Adrien"]
         }
     }
