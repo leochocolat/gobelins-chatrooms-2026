@@ -1,5 +1,11 @@
 <template>
-    <a class="chatroom-card" :href="chatroom.url" @click="onClick">
+    <a
+        class="chatroom-card"
+        :href="chatroom.url"
+        :target="inNativeApp ? null : '_blank'"
+        :rel="inNativeApp ? null : 'noopener'"
+        @click="onClick"
+    >
         <span class="chatroom-card__media">
             <img v-if="showImage" class="chatroom-card__image" :src="chatroom.image" alt="" @error="onImageError" />
             <!-- No image: white tile with an app icon template grid, like iOS's default app icon -->
@@ -52,7 +58,7 @@
 
 <script setup>
 import { computed, ref } from 'vue';
-import { openChatroom } from '@/utils/native.js';
+import { isNativeApp, openChatroom } from '@/utils/native.js';
 
 const CREDIT_ROLES = {
     design: 'Design',
@@ -69,6 +75,9 @@ const props = defineProps({
         default: false,
     },
 });
+
+// In a regular browser, chatrooms open in a new tab so the hub stays open
+const inNativeApp = isNativeApp();
 
 const imageFailed = ref(false);
 
@@ -87,7 +96,7 @@ function onImageError() {
     imageFailed.value = true;
 }
 
-// Inside the native app, let it handle the routing. Otherwise (regular browser), follow the link.
+// Inside the native app, let it handle the routing. Otherwise (regular browser), follow the link in a new tab.
 function onClick(event) {
     if (openChatroom(props.chatroom, { remember: props.remember })) {
         event.preventDefault();
